@@ -16,7 +16,7 @@ contract vault {
     receive() external payable{}
 
     function depositSomeMoney() public payable returns(uint) {
-        return msg.value;
+        return msg.value;  // how much eth is being sent with this call
     }
 
     function getBalance() public view returns(uint) {
