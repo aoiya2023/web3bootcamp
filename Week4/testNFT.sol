@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity 0.8.13;
+pragma solidity 0.8.17;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -24,6 +24,15 @@ contract simpleNFT is ERC721, Ownable {
         uint tokenId = totalSupply;
         totalSupply += 1;
         _mint(to, tokenId);
+    } 
+
+    function multiMint(address[] memory addy) public onlyOwner {
+        for (uint i = 0; i < addy.length; i++) {
+            require(maxSupply > totalSupply, "Already Minted Max");
+            uint tokenId = totalSupply;
+            totalSupply += 1;
+            _mint(addy[i], tokenId);
+        }
     } 
 
 }

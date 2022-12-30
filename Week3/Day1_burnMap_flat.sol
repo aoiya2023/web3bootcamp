@@ -535,7 +535,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
 // File: contracts/Week3/Day1burnMap.sol
 
 //SPDX-License-Identifier: MIT
-pragma solidity 0.8.13;
+pragma solidity 0.8.17;
 
 
 contract token is ERC20("WBCTEST", "WBCT") {
